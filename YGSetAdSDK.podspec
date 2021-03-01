@@ -52,5 +52,14 @@ Pod::Spec.new do |spec|
       ss.vendored_frameworks = 'Frameworks/toutiao/*.framework'
       ss.resource = 'Frameworks/toutiao/BUAdSDK.bundle'
   end
+  
+  spec.subspec 'oneway' do |ss|
+      ss.vendored_frameworks = 'Frameworks/oneway/*.framework'
+      ss.vendored_libraries = 'Frameworks/oneway/OnewaySDK.a'
+  end
+  
+  spec.subspec 'mintegral' do |ss|
+      ss.vendored_frameworks = 'Frameworks/mintegral/*.framework'
+  end
 
 end

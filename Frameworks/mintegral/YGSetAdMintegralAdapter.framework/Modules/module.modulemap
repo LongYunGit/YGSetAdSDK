@@ -1,0 +1,6 @@
+framework module YGSetAdMintegralAdapter {
+  umbrella header "YGSetAdMintegralAdapter.h"
+
+  export *
+  module * { export * }
+}

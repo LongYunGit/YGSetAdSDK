@@ -1,0 +1,6 @@
+framework module YGSetAdOneWayAdapter {
+  umbrella header "YGSetAdOneWayAdapter.h"
+
+  export *
+  module * { export * }
+}
