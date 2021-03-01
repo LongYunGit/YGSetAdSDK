@@ -1,0 +1,6 @@
+framework module YGSetAdSDK {
+  umbrella header "YGSetAdSDK.h"
+
+  export *
+  module * { export * }
+}

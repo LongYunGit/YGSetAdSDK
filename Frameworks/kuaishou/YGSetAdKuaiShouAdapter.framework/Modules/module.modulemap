@@ -1,0 +1,6 @@
+framework module YGSetAdKuaiShouAdapter {
+  umbrella header "YGSetAdKuaiShouAdapter.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module YGSetAdBaiduAdapter {
+  umbrella header "YGSetAdBaiduAdapter.h"
+
+  export *
+  module * { export * }
+}
