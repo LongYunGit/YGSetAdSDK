@@ -1,0 +1,6 @@
+framework module YGSetAdTouTiaoAdapter {
+  umbrella header "YGSetAdTouTiaoAdapter.h"
+
+  export *
+  module * { export * }
+}
