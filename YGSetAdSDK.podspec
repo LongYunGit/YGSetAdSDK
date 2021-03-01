@@ -61,5 +61,10 @@ Pod::Spec.new do |spec|
   spec.subspec 'mintegral' do |ss|
       ss.vendored_frameworks = 'Frameworks/mintegral/*.framework'
   end
+  
+  spec.subspec 'yungao' do |ss|
+      ss.vendored_frameworks = 'Frameworks/yungao/*.framework'
+      ss.resource = 'Frameworks/yungao/YGAdSDK.bundle'
+  end
 
 end
