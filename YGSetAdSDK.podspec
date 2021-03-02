@@ -9,7 +9,8 @@ Pod::Spec.new do |spec|
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "zhangbao" => "zhangbao@ly.group" }
   spec.platform     = :ios, "9.0"
-  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :tag => "#{spec.version}" }
+#  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :commit => "0905d75" }
   spec.requires_arc = true
   spec.frameworks = 'SystemConfiguration', 'CoreTelephony', 'AdSupport', 'Foundation','UIKit'
   spec.pod_target_xcconfig = { 
@@ -23,15 +24,15 @@ Pod::Spec.new do |spec|
       ss.vendored_frameworks = 'Frameworks/Core/*.framework'
   end
   
-#  spec.subspec 'baidu' do |ss|
-##      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'MessageUI', 'SafariServices', 'StoreKit', 'SystemConfiguration', 'WebKit'
-##      ss.libraries = 'c++'
-##      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC', '-lstdc++'] }
-#      ss.vendored_frameworks = 'Frameworks/baidu/*.framework'
-#      ss.resource = 'Frameworks/baidu/baidumobadsdk.bundle'
-#      ss.dependency 'YGSetAdSDK/Core'
-#  end
-#  
+  spec.subspec 'baidu' do |ss|
+#      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'MessageUI', 'SafariServices', 'StoreKit', 'SystemConfiguration', 'WebKit'
+#      ss.libraries = 'c++'
+#      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC', '-lstdc++'] }
+      ss.vendored_frameworks = 'Frameworks/baidu/*.framework'
+      ss.resource = 'Frameworks/baidu/baidumobadsdk.bundle'
+      ss.dependency 'YGSetAdSDK/Core'
+  end
+  
 #  spec.subspec 'gdt' do |ss|
 ##      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit'
 #      ss.libraries = 'z', 'xml2'
