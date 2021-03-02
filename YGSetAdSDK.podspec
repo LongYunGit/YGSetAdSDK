@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "zhangbao" => "zhangbao@ly.group" }
   spec.platform     = :ios, "9.0"
 #  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :tag => "#{spec.version}" }
-  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :commit => "0905d75" }
+  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :commit => "e6b37a6" }
   spec.requires_arc = true
   spec.frameworks = 'SystemConfiguration', 'CoreTelephony', 'AdSupport', 'Foundation','UIKit'
   spec.pod_target_xcconfig = { 
@@ -25,23 +25,23 @@ Pod::Spec.new do |spec|
   end
   
   spec.subspec 'baidu' do |ss|
-#      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'MessageUI', 'SafariServices', 'StoreKit', 'SystemConfiguration', 'WebKit'
-#      ss.libraries = 'c++'
-#      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC', '-lstdc++'] }
+      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'MessageUI', 'SafariServices', 'StoreKit', 'SystemConfiguration', 'WebKit'
+      ss.libraries = 'c++'
+      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC', '-lstdc++'] }
       ss.vendored_frameworks = 'Frameworks/baidu/*.framework'
       ss.resource = 'Frameworks/baidu/baidumobadsdk.bundle'
       ss.dependency 'YGSetAdSDK/Core'
   end
   
-#  spec.subspec 'gdt' do |ss|
-##      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit'
+  spec.subspec 'gdt' do |ss|
+#      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit'
 #      ss.libraries = 'z', 'xml2'
-##      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
-#      ss.vendored_frameworks = 'Frameworks/gdt/*.framework'
+#      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
+      ss.vendored_frameworks = 'Frameworks/gdt/*.framework'
 #      ss.vendored_libraries = 'Frameworks/gdt/libGDTMobSDK.a'
-#      ss.dependency 'YGSetAdSDK/Core'
-#  end
-#  
+      ss.dependency 'YGSetAdSDK/Core'
+  end
+  
 #  spec.subspec 'kuaishou' do |ss|
 ##      ss.frameworks = 'MobileCoreServices', 'CoreGraphics', 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit', 'CoreData', 'MediaPlayer', 'CoreMedia', 'Accelerate', 'AVKit', 'MessageUI', 'QuickLook', 'AddressBook'
 ##      ss.libraries = 'z', 'resolv.9', 'sqlite3', 'c++', 'c++abi'
