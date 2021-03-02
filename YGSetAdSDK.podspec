@@ -23,48 +23,55 @@ Pod::Spec.new do |spec|
       ss.vendored_frameworks = 'Frameworks/Core/*.framework'
   end
   
-  spec.subspec 'baidu' do |ss|
-      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'MessageUI', 'SafariServices', 'StoreKit', 'SystemConfiguration', 'WebKit'
-      ss.libraries = 'c++'
-      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC', '-lstdc++'] }
-      ss.vendored_frameworks = 'Frameworks/baidu/*.framework'
-      ss.resource = 'Frameworks/baidu/baidumobadsdk.bundle'
-  end
-  
-  spec.subspec 'gdt' do |ss|
-      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit'
-      ss.libraries = 'libz', 'libxml2'
-      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
-      ss.vendored_frameworks = 'Frameworks/gdt/*.framework'
-      ss.vendored_libraries = 'Frameworks/gdt/libGDTMobSDK.a'
-  end
-  
-  spec.subspec 'kuaishou' do |ss|
-      ss.frameworks = 'MobileCoreServices', 'CoreGraphics', 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit', 'CoreData', 'MediaPlayer', 'CoreMedia', 'Accelerate', 'AVKit', 'MessageUI', 'QuickLook', 'AddressBook'
-      ss.libraries = 'libz', 'resolv.9', 'sqlite3', 'c++', 'c++abi'
-      ss.vendored_frameworks = 'Frameworks/kuaishou/*.framework'
-      ss.resource = 'Frameworks/kuaishou/KSAdSDK.bundle'
-  end
-  
-  spec.subspec 'toutiao' do |ss|
-      ss.frameworks = 'WebKit', 'MapKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate', 'AudioToolbox', 'JavaScriptCore', 'Security'
-      ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv'
-      ss.vendored_frameworks = 'Frameworks/toutiao/*.framework'
-      ss.resource = 'Frameworks/toutiao/BUAdSDK.bundle'
-  end
-  
-  spec.subspec 'oneway' do |ss|
-      ss.vendored_frameworks = 'Frameworks/oneway/*.framework'
-      ss.vendored_libraries = 'Frameworks/oneway/OnewaySDK.a'
-  end
-  
-  spec.subspec 'mintegral' do |ss|
-      ss.vendored_frameworks = 'Frameworks/mintegral/*.framework'
-  end
-  
-  spec.subspec 'yungao' do |ss|
-      ss.vendored_frameworks = 'Frameworks/yungao/*.framework'
-      ss.resource = 'Frameworks/yungao/YGAdSDK.bundle'
-  end
+#  spec.subspec 'baidu' do |ss|
+##      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'CoreMedia', 'CoreMotion', 'CoreTelephony', 'MessageUI', 'SafariServices', 'StoreKit', 'SystemConfiguration', 'WebKit'
+##      ss.libraries = 'c++'
+##      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC', '-lstdc++'] }
+#      ss.vendored_frameworks = 'Frameworks/baidu/*.framework'
+#      ss.resource = 'Frameworks/baidu/baidumobadsdk.bundle'
+#      ss.dependency 'YGSetAdSDK/Core'
+#  end
+#  
+#  spec.subspec 'gdt' do |ss|
+##      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit'
+#      ss.libraries = 'z', 'xml2'
+##      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
+#      ss.vendored_frameworks = 'Frameworks/gdt/*.framework'
+#      ss.vendored_libraries = 'Frameworks/gdt/libGDTMobSDK.a'
+#      ss.dependency 'YGSetAdSDK/Core'
+#  end
+#  
+#  spec.subspec 'kuaishou' do |ss|
+##      ss.frameworks = 'MobileCoreServices', 'CoreGraphics', 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit', 'CoreData', 'MediaPlayer', 'CoreMedia', 'Accelerate', 'AVKit', 'MessageUI', 'QuickLook', 'AddressBook'
+##      ss.libraries = 'z', 'resolv.9', 'sqlite3', 'c++', 'c++abi'
+#      ss.vendored_frameworks = 'Frameworks/kuaishou/*.framework'
+#      ss.resource = 'Frameworks/kuaishou/KSAdSDK.bundle'
+#      ss.dependency 'YGSetAdSDK/Core'
+#  end
+#  
+#  spec.subspec 'toutiao' do |ss|
+##      ss.frameworks = 'WebKit', 'MapKit', 'MediaPlayer', 'CoreLocation', 'AdSupport', 'CoreMedia', 'AVFoundation', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'MobileCoreServices', 'CoreMotion', 'Accelerate', 'AudioToolbox', 'JavaScriptCore', 'Security'
+##      ss.libraries = 'c++', 'resolv', 'z', 'sqlite3', 'bz2', 'xml2', 'iconv'
+#      ss.vendored_frameworks = 'Frameworks/toutiao/*.framework'
+#      ss.resource = 'Frameworks/toutiao/BUAdSDK.bundle'
+#      ss.dependency 'YGSetAdSDK/Core'
+#  end
+#  
+#  spec.subspec 'oneway' do |ss|
+#      ss.vendored_frameworks = 'Frameworks/oneway/*.framework'
+#      ss.vendored_libraries = 'Frameworks/oneway/OnewaySDK.a'
+#      ss.dependency 'YGSetAdSDK/Core'
+#  end
+#  
+#  spec.subspec 'mintegral' do |ss|
+#      ss.vendored_frameworks = 'Frameworks/mintegral/*.framework'
+#      ss.dependency 'YGSetAdSDK/Core'
+#  end
+#  
+#  spec.subspec 'yungao' do |ss|
+#      ss.vendored_frameworks = 'Frameworks/yungao/*.framework'
+#      ss.resource = 'Frameworks/yungao/YGAdSDK.bundle'
+#      ss.dependency 'YGSetAdSDK/Core'
+#  end
 
 end
