@@ -10,14 +10,13 @@ Pod::Spec.new do |spec|
   spec.author             = { "zhangbao" => "zhangbao@ly.group" }
   spec.platform     = :ios, "9.0"
 #  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :tag => "#{spec.version}" }
-  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :commit => "e6b37a6" }
+  spec.source       = { :git => "https://github.com/LongYunGit/YGSetAdSDK.git", :commit => "35e95a4" }
   spec.requires_arc = true
   spec.frameworks = 'SystemConfiguration', 'CoreTelephony', 'AdSupport', 'Foundation','UIKit'
   spec.pod_target_xcconfig = { 
-    'VALID_ARCHS' => 'x86_64 i386 armv7 arm64',
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => ['arm64', 'i386']
   }
-  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => ['arm64', 'i386'] }
   spec.default_subspecs = 'Core'
   
   spec.subspec 'Core' do |ss|
@@ -30,16 +29,13 @@ Pod::Spec.new do |spec|
       ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC', '-lstdc++'] }
       ss.vendored_frameworks = 'Frameworks/baidu/*.framework'
       ss.resource = 'Frameworks/baidu/baidumobadsdk.bundle'
-      ss.dependency 'YGSetAdSDK/Core'
+      ss.dependency 'YGSetAdSDK/Core', "#{spec.version}"
   end
   
   spec.subspec 'gdt' do |ss|
-#      ss.frameworks = 'AVFoundation', 'AdSupport', 'CoreLocation', 'Security', 'CoreTelephony', 'StoreKit', 'SystemConfiguration', 'WebKit'
-#      ss.libraries = 'z', 'xml2'
-#      ss.pod_target_xcconfig = { 'OTHER_LDFLAGS' => ['-lObjC'] }
       ss.vendored_frameworks = 'Frameworks/gdt/*.framework'
-#      ss.vendored_libraries = 'Frameworks/gdt/libGDTMobSDK.a'
-      ss.dependency 'YGSetAdSDK/Core'
+      ss.dependency 'YGSetAdSDK/Core', "#{spec.version}"
+      ss.dependency 'GDTMobSDK', '4.12.3'
   end
   
 #  spec.subspec 'kuaishou' do |ss|
